@@ -1,0 +1,14 @@
+{
+  "name": "Reaculator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/srtalaie/Reaculator.git",
+  "author": "srtalaie <srt4721@yahoo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "if-env": "^1.0.4",
+    "path": "^0.12.7"
+  }
+}
