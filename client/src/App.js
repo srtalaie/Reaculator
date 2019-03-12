@@ -4,9 +4,7 @@ import Home from '../src/pages/Home.js';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Home />
-      </div>
+      <Home />
     );
   }
 }
