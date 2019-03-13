@@ -26,3 +26,5 @@ const reducer = (state = CALC_STATE, action) => {
             return state;
     }
 }
+
+export default reducer;
