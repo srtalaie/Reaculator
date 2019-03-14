@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ButtonsCard from "../components/ButtonsCard/ButtonsCard.js";
+import { connect } from 'react-redux';
+import { addElement, clear, equals } from '../actions/index.js';
 
 class Home extends Component {
     state = {
@@ -7,7 +9,10 @@ class Home extends Component {
         numNamesArr: ['nine', 'eight', 'seven', 'six', 'five', 'four', 'three', 'two', 'one', 'zero']
     }
 
+    
+
     render(){
+        const { getInput, clear, equals } = this.props;
         return(
             <div>
                 <input type="text" id="display"></input>
@@ -37,4 +42,15 @@ class Home extends Component {
 
 }
 
-export default Home;
+const mapDispatchToProps = (dispatch) => {
+    return({
+        getInput: getInput => dispatch(addElement),
+        equals: equals => dispatch(equals),
+        clear: clear => dispatch(clear)
+    })
+  }
+
+const mapStateToProps = state => ({
+    state: [...state]
+});
+export default connect(mapDispatchToProps, mapStateToProps)(Home);
