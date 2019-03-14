@@ -6,10 +6,13 @@ import { addElement, clear, equals } from '../actions/index.js';
 class Home extends Component {
     state = {
         numArr: [9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
-        numNamesArr: ['nine', 'eight', 'seven', 'six', 'five', 'four', 'three', 'two', 'one', 'zero']
+        numNamesArr: ['nine', 'eight', 'seven', 'six', 'five', 'four', 'three', 'two', 'one', 'zero'],
+        input: ''
     }
 
-    
+    onchange = (event) => {
+        this.setState({ input: event.target.value })
+    }
 
     render(){
         const { getInput, clear, equals } = this.props;
