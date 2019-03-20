@@ -7,18 +7,13 @@ class Home extends Component {
     state = {
         numArr: [9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
         numNamesArr: ['nine', 'eight', 'seven', 'six', 'five', 'four', 'three', 'two', 'one', 'zero'],
-        input: ''
-    }
-
-    onchange = (event) => {
-        this.setState({ input: event.target.value })
     }
 
     render(){
-        const { getInput, clear, equals } = this.props;
+        const { addElem, clear, submit, value } = this.props;
         return(
             <div>
-                <input type="text" id="display"></input>
+                <input type="text" id="display" value={value}></input>
                 <div>
                     {this.state.numArr.map(number => {
                         let index = this.state.numArr.indexOf(number);
@@ -27,6 +22,7 @@ class Home extends Component {
                                 value={number}
                                 id={this.state.numNamesArr[index]}
                                 key={number}
+                                onClick={addElem.bind(this, number)}
                             />
                         )
                     })}
@@ -45,15 +41,16 @@ class Home extends Component {
 
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = state => ({
+    value: state.value
+});
+
+const mapDispatchToProps = dispatch => {
     return({
-        getInput: getInput => dispatch(addElement),
-        equals: equals => dispatch(equals),
-        clear: clear => dispatch(clear)
+        addElem: value => dispatch(addElement(value)),
+        submit: () => dispatch(equals()),
+        clear: () => dispatch(clear())
     })
   }
 
-const mapStateToProps = state => ({
-    state: [...state]
-});
-export default connect(mapDispatchToProps, mapStateToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

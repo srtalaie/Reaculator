@@ -1,8 +1,8 @@
 import React from "react";
 
-const ButtonsCard = ({ value, id }) => {
+const ButtonsCard = ({ value, id, onClick }) => {
     return(
-        <button data-value={value} key={value}>{value}</button>
+        <button data-value={value} key={value} onClick={onClick}>{value}</button>
     )
 }
 

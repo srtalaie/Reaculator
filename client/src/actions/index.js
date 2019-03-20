@@ -1,12 +1,19 @@
-export const addElement = (text)=> {
-    type: 'ADD_ELEM',
-    text: text
+export function addElement(value){
+   return {
+        type: 'ADD_ELEM',
+        value
+    }
 }
 
-export const clear = () => {
-    type: 'CLEAR'
+export function clear(){
+    return {
+        type: 'CLEAR'
+    }
 }
 
-export const equals = () => {
-    type: 'EQUALS'
+export function equals(){
+    return {
+        type: 'EQUALS'
+    }
 }
+

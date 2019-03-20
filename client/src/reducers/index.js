@@ -1,5 +1,5 @@
 const CALC_STATE = {
-    value: 0
+    value: ''
 }
 
 const reducer = (state = CALC_STATE, action) => {
@@ -7,7 +7,7 @@ const reducer = (state = CALC_STATE, action) => {
         case 'ADD_ELEM':
             return{
                 ...state,
-                value: state.value + action.text
+                value: state.value + action.value
             }
             break;
         case 'CLEAR':
