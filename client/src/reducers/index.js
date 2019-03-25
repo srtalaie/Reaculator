@@ -9,19 +9,16 @@ const reducer = (state = CALC_STATE, action) => {
                 ...state,
                 value: state.value + action.value
             }
-            break;
         case 'CLEAR':
             return{
                 ...state,
-                value: 0
+                value: ''
             }
-            break;
         case 'EQUALS':
             return{
                 ...state,
                 value: eval(state.value)
             }
-            break;
         default:
             return state;
     }

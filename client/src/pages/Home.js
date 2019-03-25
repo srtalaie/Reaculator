@@ -13,7 +13,7 @@ class Home extends Component {
         const { addElem, clear, submit, value } = this.props;
         return(
             <div>
-                <input type="text" id="display" value={value}></input>
+                <input type="text" id="display" value={value}>{value}</input>
                 <div>
                     {this.state.numArr.map(number => {
                         let index = this.state.numArr.indexOf(number);
