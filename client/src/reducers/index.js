@@ -1,5 +1,5 @@
 const CALC_STATE = {
-    value: 0
+    value: ''
 }
 
 const reducer = (state = CALC_STATE, action) => {
