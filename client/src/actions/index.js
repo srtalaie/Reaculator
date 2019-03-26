@@ -1,7 +1,7 @@
-export function addElement(value){
+export function addElement(num){
    return {
         type: 'ADD_ELEM',
-        value
+        num
     }
 }
 

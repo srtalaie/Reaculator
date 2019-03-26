@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ButtonsCard from "../components/ButtonsCard/ButtonsCard.js";
 import { connect } from 'react-redux';
+import { store } from '../store/index';
 import { addElement, clear, equals } from '../actions/index.js';
 
 class Home extends Component {
@@ -9,6 +10,10 @@ class Home extends Component {
         numNamesArr: ['nine', 'eight', 'seven', 'six', 'five', 'four', 'three', 'two', 'one', 'zero'],
     }
 
+    componentDidMount(){
+        console.log(store.getState());
+    }
+    
     render(){
         const { addElem, clear, submit, value } = this.props;
         return(
@@ -47,7 +52,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
     return({
-        addElem: value => dispatch(addElement(value)),
+        addElem: number => dispatch(addElement(number)),
         submit: () => dispatch(equals()),
         clear: () => dispatch(clear())
     })

@@ -1,13 +1,13 @@
 const CALC_STATE = {
-    value: ''
+    value: 0
 }
 
 const reducer = (state = CALC_STATE, action) => {
-    switch(action){
+    switch(action.type){
         case 'ADD_ELEM':
             return{
                 ...state,
-                value: state.value + action.value
+                value: state.value + action.num
             }
         case 'CLEAR':
             return{
@@ -17,7 +17,7 @@ const reducer = (state = CALC_STATE, action) => {
         case 'EQUALS':
             return{
                 ...state,
-                value: eval(state.value)
+                value: eval(state.num)
             }
         default:
             return state;
