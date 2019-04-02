@@ -10,15 +10,11 @@ class Home extends Component {
         numNamesArr: ['nine', 'eight', 'seven', 'six', 'five', 'four', 'three', 'two', 'one', 'zero'],
     }
 
-    componentDidMount(){
-        console.log(store.getState());
-    }
-    
     render(){
         const { addElem, clear, submit, value } = this.props;
         return(
             <div>
-                <input type="text" id="display" value={value}>{value}</input>
+                <input type="text" id="display" value={value} />
                 <div>
                     {this.state.numArr.map(number => {
                         let index = this.state.numArr.indexOf(number);
@@ -46,15 +42,17 @@ class Home extends Component {
 
 }
 
-const mapStateToProps = state => ({
-    value: state.value
-});
+const mapStateToProps = (state) => {
+    return{
+        value: state.reducer.value
+    }
+};
 
 const mapDispatchToProps = dispatch => {
     return({
         addElem: number => dispatch(addElement(number)),
         submit: () => dispatch(equals()),
-        clear: () => dispatch(clear())
+        clear: () => dispatch(clear()),
     })
   }
 

@@ -16,4 +16,3 @@ export function equals(){
         type: 'EQUALS'
     }
 }
-
