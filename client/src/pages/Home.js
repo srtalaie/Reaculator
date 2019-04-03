@@ -29,11 +29,11 @@ class Home extends Component {
                     })}
                 </div>
                 <div>
-                    <button id="add">+</button>
-                    <button id="subtract">-</button>
-                    <button id="multiply">*</button>
-                    <button id="divide">/</button>
-                    <button id="decimal">.</button>
+                    <button id="add" onClick={addElem.bind(this, '+')}>+</button>
+                    <button id="subtract" onClick={addElem.bind(this, '-')}>-</button>
+                    <button id="multiply" onClick={addElem.bind(this, '*')}>*</button>
+                    <button id="divide" onClick={addElem.bind(this, '/')}>/</button>
+                    <button id="decimal" onClick={addElem.bind(this, '.')}>.</button>
                     <button id="equals">=</button>
                     <button id="clear">CLEAR</button>
                 </div>
