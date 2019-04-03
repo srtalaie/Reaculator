@@ -17,7 +17,8 @@ const reducer = (state = CALC_STATE, action) => {
         case 'EQUALS':
             return{
                 ...state,
-                value: eval(state.num)
+                // eslint-disable-next-line no-eval
+                value: eval(state.value)
             }
         default:
             return state;
