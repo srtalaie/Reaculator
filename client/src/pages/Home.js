@@ -35,7 +35,7 @@ class Home extends Component {
                     <button id="divide" onClick={addElem.bind(this, '/')}>/</button>
                     <button id="decimal" onClick={addElem.bind(this, '.')}>.</button>
                     <button id="equals" onClick={submit.bind(this)}>=</button>
-                    <button id="clear">CLEAR</button>
+                    <button id="clear" onClick={clear.bind(this)}>CLEAR</button>
                 </div>
             </div>
     )}
