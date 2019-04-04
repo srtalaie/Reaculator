@@ -12,9 +12,16 @@ class Home extends Component {
 
     render(){
         const { addElem, clear, submit, value } = this.props;
+        let display;
+
+        if(value === ''){
+            display = <input type="text" id="display" value='0' />
+        }else{
+           display = <input type="text" id="display" value={value} />
+        }
         return(
             <div>
-                <input type="text" id="display" value={value} />
+                {display}
                 <div>
                     {this.state.numArr.map(number => {
                         let index = this.state.numArr.indexOf(number);
