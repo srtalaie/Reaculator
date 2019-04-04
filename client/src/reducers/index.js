@@ -1,3 +1,5 @@
+//Change value to array to meet User Stories #'s 10 11 13
+
 const CALC_STATE = {
     value: ''
 }
