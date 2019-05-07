@@ -4,6 +4,39 @@ import { connect } from 'react-redux';
 import { store } from '../store/index';
 import { addElement, clear, equals } from '../actions/index.js';
 
+const wrapperDiv = {
+    display: 'flex',
+    margin: '4vh auto'
+}
+
+const outerDivStyle = {
+    display: 'inline-block',
+    margin: 'auto',
+    border: '2px solid black',
+}
+
+const rowStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    justifyContent: 'space-evenly',
+    margin: '10px'
+}
+
+const displayStyle = {
+    marginBottom: '10px'
+}
+
+const buttonsStyle = {
+    display: 'flex',
+    flexWrap: 'wrap',
+}
+
+const buttonStyle = {
+    display: 'flex',
+    alignContent: 'space-between'
+}
+
 class Home extends Component {
     state = {
         numArr: [9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
@@ -20,29 +53,36 @@ class Home extends Component {
            display = <input type="text" id="display" value={value} />
         }
         return(
-            <div>
-                {display}
-                <div>
-                    {this.state.numArr.map(number => {
-                        let index = this.state.numArr.indexOf(number);
-                        return (
-                            <ButtonsCard 
-                                value={number}
-                                id={this.state.numNamesArr[index]}
-                                key={number}
-                                onClick={addElem.bind(this, number)}
-                            />
-                        )
-                    })}
-                </div>
-                <div>
-                    <button id="add" onClick={addElem.bind(this, '+')}>+</button>
-                    <button id="subtract" onClick={addElem.bind(this, '-')}>-</button>
-                    <button id="multiply" onClick={addElem.bind(this, '*')}>*</button>
-                    <button id="divide" onClick={addElem.bind(this, '/')}>/</button>
-                    <button id="decimal" onClick={addElem.bind(this, '.')}>.</button>
-                    <button id="equals" onClick={submit.bind(this)}>=</button>
-                    <button id="clear" onClick={clear.bind(this)}>CLEAR</button>
+            <div style={wrapperDiv}>
+                <div style={outerDivStyle}>
+                    <div style={rowStyle}>
+                        <div style={displayStyle}>
+                            {display}
+                        </div>
+                        <div style={buttonsStyle}>
+                            {this.state.numArr.map(number => {
+                                let index = this.state.numArr.indexOf(number);
+                                return (
+                                    <ButtonsCard 
+                                        value={number}
+                                        id={this.state.numNamesArr[index]}
+                                        key={number}
+                                        onClick={addElem.bind(this, number)}
+                                        style={buttonStyle}
+                                    />
+                                )
+                            })}
+                        </div>
+                        <div>
+                            <button id="add" onClick={addElem.bind(this, '+')}>+</button>
+                            <button id="subtract" onClick={addElem.bind(this, '-')}>-</button>
+                            <button id="multiply" onClick={addElem.bind(this, '*')}>*</button>
+                            <button id="divide" onClick={addElem.bind(this, '/')}>/</button>
+                            <button id="decimal" onClick={addElem.bind(this, '.')}>.</button>
+                            <button id="equals" onClick={submit.bind(this)}>=</button>
+                            <button id="clear" onClick={clear.bind(this)}>CLEAR</button>
+                        </div>
+                    </div>
                 </div>
             </div>
     )}
