@@ -1,2 +1,2 @@
 # Reaculator
-Calculator built using React/Dedux
+Calculator built using React/Redux
